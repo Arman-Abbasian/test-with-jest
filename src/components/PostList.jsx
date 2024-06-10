@@ -1,17 +1,22 @@
-import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 
 function PostList() {
     const [posts,setPosts]=useState([])
     useEffect(()=>{
-        axios.get('https://jsonplaceholder.typicode.com/posts').then((res)=>{
-            console.log(res.data)
-
-        }).catch((err)=>console.log(err))
+      const fetchData = async () => {
+        try {
+          const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+          const posts = await response.json();
+          setPosts(posts);
+        } catch (error) {
+          // Handle errors (e.g., network issues)
+          console.error('Error fetching data:', error);
+        }
+      };
+      fetchData();
     },[])
   return (
-    <div>PostList</div>
+    <h1>post list</h1>
   )
 }
-
 export default PostList
