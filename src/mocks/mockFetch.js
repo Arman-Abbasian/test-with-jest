@@ -1,8 +1,9 @@
-const postListResponse = {
-    data:[
+const postListResponse = 
+    [
         {body: "quia et suscipit",id: 1,title: "sunt aut ",userId: 1},
-        {body: "suscipit",id: 2,title: "aut ",userId: 2}],
-};
+        {body: "suscipit",id: 2,title: "aut ",userId: 2}
+    ]
+;
 
 export default async function mockFetch(url) {
     switch (url) {
