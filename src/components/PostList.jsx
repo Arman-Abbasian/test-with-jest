@@ -16,7 +16,14 @@ function PostList() {
       fetchData();
     },[])
   return (
+    <div>
     <h1>post list</h1>
+    <div>
+      {posts.map(item=>{
+        return <p key={item.id}>{item.title}</p>
+      })}
+    </div>
+    </div>
   )
 }
 export default PostList
