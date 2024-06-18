@@ -37,6 +37,13 @@ beforeEach(() => {
 
    const listItems = screen.getAllByRole("paragraph");
    expect(listItems).toHaveLength(2);
-  
+   });
+
+   test('one item.title to be in the text', async () => {
+      await act(async () => {
+         render(<PostList />);
+       });
+       const paragraphElement = screen.getByText('aut');
+       expect(paragraphElement).toBeInTheDocument();
    });
 
