@@ -23,10 +23,20 @@ beforeEach(() => {
 });
 
 //-----------------
- test('post list', async () => {
+ test('post list header', async () => {
    await act(async () => {
       render(<PostList />);
     });
    expect(screen.getByRole("heading")).toHaveTextContent(/post list/);
 });
+
+   test('post list items', async () => {
+      await act(async () => {
+         render(<PostList />);
+       });
+
+   const listItems = screen.getAllByRole("paragraph");
+   expect(listItems).toHaveLength(2);
+  
+   });
 
