@@ -22,7 +22,7 @@ function PostList() {
     <h1>post list</h1>
     <div>
       {posts.map(item=>{
-        return <p  key={item.id}>{item.title}</p>
+        return <p data-testid={item.id} key={item.id}>{item.title}</p>
       })}
     </div>
     </div>

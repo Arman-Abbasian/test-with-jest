@@ -46,4 +46,12 @@ beforeEach(() => {
        const paragraphElement = screen.getByText('aut');
        expect(paragraphElement).toBeInTheDocument();
    });
+   test('one p tag with key=2 be in the document', async () => {
+      await act(async () => {
+         render(<PostList />);
+       });
+       const paragraphElement = screen.getByTestId('1');
+      expect(paragraphElement).toBeInTheDocument();
+      expect(paragraphElement.tagName.toLowerCase()).toBe('p');
+   });
 
