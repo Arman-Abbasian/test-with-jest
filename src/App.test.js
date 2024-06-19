@@ -1,7 +1,7 @@
 import { render, screen,act } from "@testing-library/react";
 import mockFetch from "../src/mocks/mockFetch";
 import App from "./App";
-import PostList from "./components/PostList";
+import PostList from "./components/Posts/PostList";
 
 
 beforeEach(() => {
