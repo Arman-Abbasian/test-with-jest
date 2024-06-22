@@ -1,8 +1,5 @@
 import React, { useState } from 'react'
-var headers = {
-    "Content-Type": "application/json",                                                                                                
-    "Access-Control-Origin": "*"
- }
+
 
 function AddPost() {
     const [postForm,setPostForm]=useState({title:"",body:""});
@@ -12,19 +9,21 @@ function AddPost() {
     const submitHandler=(e)=>{
         e.preventDefault();
         console.log(postForm)
+        fetch("http://localhost:4000/posts", {
+            method: "POST",
+            
+            body:  JSON.stringify(postForm)
+        })
+        .then(function(response){ 
+            console.log(response)
+            setPostForm({title:"",body:""})
+            return response.json(); 
+        })
+        .then(function(data){ 
+            console.log(data)
+        });
     };
-    fetch("https://jsonplaceholder.typicode.com/posts", {
-        method: "POST",
-        headers: headers,
-        body:  JSON.stringify(postForm)
-    })
-    .then(function(response){ 
-        console.log(response)
-        return response.json(); 
-    })
-    .then(function(data){ 
-        console.log(data)
-    });
+    
   return (
     <div>
         <form onSubmit={submitHandler}>
