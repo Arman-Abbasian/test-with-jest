@@ -1,24 +1,17 @@
 import React, { useEffect, useState } from 'react'
+import AddPost from '../AddPost/AddPost';
+import { fetchData } from '../../services/post';
 
 
 
 function PostList() {
     const [posts,setPosts]=useState([])
     useEffect(()=>{
-      const fetchData = async () => {
-        try {
-          const response = await fetch('http://localhost:4000/posts');
-          const posts = await response.json();
-          setPosts(posts);
-        } catch (error) {
-          // Handle errors (e.g., network issues)
-          console.error('Error fetching data:', error);
-        }
-      };
-      fetchData();
+      fetchData(setPosts)
     },[])
   return (
     <div>
+      <AddPost setPosts={setPosts} />
     <h1>post list</h1>
     <div>
       {posts.map(item=>{

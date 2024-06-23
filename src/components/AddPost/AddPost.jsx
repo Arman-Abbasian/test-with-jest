@@ -1,27 +1,15 @@
 import React, { useState } from 'react'
+import { postData } from '../../services/post';
 
 
-function AddPost() {
+function AddPost({setPosts}) {
     const [postForm,setPostForm]=useState({title:"",body:""});
     const changeHandler=(e)=>{
         setPostForm({...postForm,[e.target.name]:e.target.value})
     };
     const submitHandler=(e)=>{
         e.preventDefault();
-        console.log(postForm)
-        fetch("http://localhost:4000/posts", {
-            method: "POST",
-            
-            body:  JSON.stringify(postForm)
-        })
-        .then(function(response){ 
-            console.log(response)
-            setPostForm({title:"",body:""})
-            return response.json(); 
-        })
-        .then(function(data){ 
-            console.log(data)
-        });
+        postData(postForm,setPosts);
     };
     
   return (
@@ -32,7 +20,7 @@ function AddPost() {
                 <input type='text' name='title' id="title" value={postForm.title} onChange={changeHandler} />
             </div>
             <div>
-                <label htmlFor='body'>body </label>
+                <label htmlFor='body'>body</label>
                 <input type='text' name='body' id="body" value={postForm.body} onChange={changeHandler} />
             </div>
             <div>
