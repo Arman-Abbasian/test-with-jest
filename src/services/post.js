@@ -1,3 +1,5 @@
+import { initilaPostForm } from "../components/AddPost/AddPost";
+
 export const fetchData = async (setPosts) => {
     try {
       console.log('Fetching data...');
@@ -14,16 +16,15 @@ export const fetchData = async (setPosts) => {
     }
   };
 
-export const postData=async(postForm,setPosts)=>{
+export const postData=async(postForm,setPosts,setPostForm)=>{
     try {
         const response = await fetch('http://localhost:4000/posts',{
             method: "POST",
             body:  JSON.stringify(postForm)
         });
         const data = await response.json();
-        const getRespose = await fetch('http://localhost:4000/posts');
-      const posts = await getRespose.json();
-      setPosts(posts);
+        setPostForm(initilaPostForm)
+        await fetchData(setPosts)
         return data
       } catch (error) {
         console.error('Error fetching data:', error);

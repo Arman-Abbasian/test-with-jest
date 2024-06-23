@@ -1,15 +1,17 @@
 import React, { useState } from 'react'
 import { postData } from '../../services/post';
 
+export const initilaPostForm={title:"",body:""}
 
 function AddPost({setPosts}) {
-    const [postForm,setPostForm]=useState({title:"",body:""});
+    const [postForm,setPostForm]=useState(initilaPostForm);
+
     const changeHandler=(e)=>{
         setPostForm({...postForm,[e.target.name]:e.target.value})
     };
     const submitHandler=(e)=>{
         e.preventDefault();
-        postData(postForm,setPosts);
+        postData(postForm,setPosts,setPostForm);
     };
     
   return (
