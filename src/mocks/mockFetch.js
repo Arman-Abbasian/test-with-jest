@@ -1,9 +1,10 @@
 const postListResponse = 
     [
-        {body: "quia et suscipit",id: 1,title: "sunt aut ",userId: 1},
-        {body: "suscipit",id: 2,title: "aut ",userId: 2}
-    ]
-;
+        {body: "quia et suscipit",id: 1,title: "sunt aut "},
+        {body: "suscipit",id: 2,title: "aut "}
+    ];
+    
+const postSendResponse = {body: "quia et suscipit",id: 1,title: "sunt aut"};
 
 export default async function mockFetch(url) {
     switch (url) {

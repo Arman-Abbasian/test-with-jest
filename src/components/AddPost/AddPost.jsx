@@ -18,7 +18,7 @@ function AddPost({setPosts}) {
     <div>
         <form onSubmit={submitHandler}>
             <div>
-                <label htmlFor='title'>title </label>
+                <label htmlFor='title'>title</label>
                 <input type='text' name='title' id="title" value={postForm.title} onChange={changeHandler} />
             </div>
             <div>
