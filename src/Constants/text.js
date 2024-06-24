@@ -1,0 +1,6 @@
+export const itemsText={
+    item1:'ands instead of using postal mail, email, or voicemail.',
+    item2:'dr services from e-commerce websites or to participate in online contests. Advertisers and service providers use direct text marketing to send messages t or voicemail.',
+    item3:'Tome, me, the messages contai in Oslo.[5] The first technical solution evolved in a GSM subgroup under the leadership of Finn Trosby. It was further developed under the leadership of Kevin Holley and Ian Harris (see Short Message Service).[6] SMS forms an integral part of Signalling System No. 7 (SS7).[7] Under SS7, it is a "state" with 160 characters of data, coded in the ITU-T "T.56" text format, that has a "sequence lead in" to determine different language codes and may have special character codes that permit, for example, sending simple graphs as text. This was part of ISDN (Integrated Services Digital Network), and since GSM is based on this, it made its way to the mobile phone. Messages could be sent and received on ISDN phones, and these can send SMS to any GSM phone. The possibility of doing something is one thing; implementing it is another, but systems existed in 1988 that sent SMS messages to mobile phones[citation needed] (compare ND-NOTIS).',
+    item4:'heloo'
+} 
