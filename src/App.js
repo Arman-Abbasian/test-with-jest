@@ -6,8 +6,8 @@ import PostList from './components/Posts/PostList';
 function App() {
   return (
     <div className="App" data-testid="App">
-      {/* <PostList /> */}
-      <Final />
+      <PostList />
+      {/* <Final /> */}
     </div>
   );
 }

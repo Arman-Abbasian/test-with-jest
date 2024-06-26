@@ -8,10 +8,10 @@ const App = () => {
 
   // Define the items with their respective heights and content
   const items = [
-    { percent: 20, content: itemsText.item1 },
-    { percent: 40, content: itemsText.item2 },
-    { percent: 10, content: itemsText.item3 },
-    { percent: 30, content: itemsText.item4 },
+    { percent: 5, content: itemsText.item1 },
+    { percent: 10, content: itemsText.item2 },
+    { percent: 30, content: itemsText.item3 },
+    { percent: 55, content: itemsText.item4 },
   ];
 
   return (
