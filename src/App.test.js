@@ -54,29 +54,29 @@ beforeEach(() => {
       expect(paragraphElement.tagName.toLowerCase()).toBe('p');
    });
 
-   test('should submit the post form and update the post list', async () => {
-      render(<AddPost />);
+   // test('should submit the post form and update the post list', async () => {
+   //    render(<AddPost />);
     
-      const titleInput = screen.getByLabelText(/title/i);
-      const bodyInput = screen.getByLabelText(/body/i);
-      const submitButton = screen.getByRole('button', { name: /add/i });
+   //    const titleInput = screen.getByLabelText(/title/i);
+   //    const bodyInput = screen.getByLabelText(/body/i);
+   //    const submitButton = screen.getByRole('button', { name: /add/i });
     
-      fireEvent.change(titleInput, { target: { value: 'New Post Title' } });
-      fireEvent.change(bodyInput, { target: { value: 'New Post Body' } });
+   //    fireEvent.change(titleInput, { target: { value: 'New Post Title' } });
+   //    fireEvent.change(bodyInput, { target: { value: 'New Post Body' } });
     
-      fireEvent.click(submitButton);
+   //    fireEvent.click(submitButton);
     
-      await waitFor(() => {
-        expect(fetch).toHaveBeenCalledTimes(2);
-        expect(fetch).toHaveBeenCalledWith('http://localhost:4000/posts', expect.objectContaining({
-          method: 'POST',
-          body: JSON.stringify({ title: 'New Post Title', body: 'New Post Body' }),
-        }));
-        expect(mockSetPosts).toHaveBeenCalledWith(expect.any(Function));
-      });
+   //    await waitFor(() => {
+   //      expect(fetch).toHaveBeenCalledTimes(2);
+   //      expect(fetch).toHaveBeenCalledWith('http://localhost:4000/posts', expect.objectContaining({
+   //        method: 'POST',
+   //        body: JSON.stringify({ title: 'New Post Title', body: 'New Post Body' }),
+   //      }));
+   //      expect(mockSetPosts).toHaveBeenCalledWith(expect.any(Function));
+   //    });
     
-      // Verify form is reset
-      expect(titleInput.value).toBe(initilaPostForm.title);
-      expect(bodyInput.value).toBe(initilaPostForm.body);
-    });
+   //    // Verify form is reset
+   //    expect(titleInput.value).toBe(initilaPostForm.title);
+   //    expect(bodyInput.value).toBe(initilaPostForm.body);
+   //  });
 

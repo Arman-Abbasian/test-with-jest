@@ -25,6 +25,6 @@ export const postData=async(postForm,setPosts,setPostForm)=>{
         console.log(data)
         return data
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error('Error post data:', error);
       }
 };
